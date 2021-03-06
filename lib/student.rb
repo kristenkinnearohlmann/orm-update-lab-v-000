@@ -30,13 +30,17 @@ class Student
   end
 
   def save
-    sql = <<-SQL
-      INSERT INTO students
-      VALUES (?, ?, ?)
-    SQL
+    if self.id
+      
+    else
+      sql = <<-SQL
+        INSERT INTO students
+        VALUES (?, ?, ?)
+      SQL
 
-    DB[:conn].execute(sql, self.id, self.name, self.grade)
-    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
+      DB[:conn].execute(sql, self.id, self.name, self.grade)
+      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
+    wns
   end
 
 end
