@@ -31,7 +31,7 @@ class Student
 
   def save
     if self.id
-      
+
     else
       sql = <<-SQL
         INSERT INTO students
