@@ -31,7 +31,6 @@ class Student
 
   def save
     if self.id
-      binding.pry
       self.update
     else
       sql = <<-SQL
