@@ -44,7 +44,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map do |row|
-      self.create(row[1],row[2],row[0])
+      self.new(row[1],row[2],row[0])
     end
   end
 
