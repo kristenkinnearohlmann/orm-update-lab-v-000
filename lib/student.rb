@@ -32,7 +32,7 @@ class Student
   def save
     if self.id
       binding.pry
-      self.save
+      self.update
     else
       sql = <<-SQL
         INSERT INTO students
